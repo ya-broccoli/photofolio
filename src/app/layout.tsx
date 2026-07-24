@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import ClientLayout from './ClientLayout'
+import { Analytics } from '@vercel/analytics/next'
 import React from 'react'
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ru">
             <body className="antialiased">
                 <ClientLayout>{children}</ClientLayout>
+                <Analytics />
             </body>
         </html>
     )
