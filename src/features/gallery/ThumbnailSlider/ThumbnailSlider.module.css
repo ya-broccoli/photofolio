@@ -1,0 +1,240 @@
+.thumbnailStrip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: 166px;
+    padding: 26px 62px;
+    box-sizing: border-box;
+    background: rgba(18, 18, 18, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+
+    @media (max-width: 1920px) {
+        height: 164px;
+        padding: 26px 56px;
+    }
+    @media (max-width: 1800px) {
+        height: 160px;
+        padding: 25px 54px;
+    }
+    @media (max-width: 1600px) {
+        height: 158px;
+        padding: 25px 52px;
+    }
+    @media (max-width: 1440px) {
+        height: 154px;
+        padding: 24px 50px;
+    }
+    @media (max-width: 1280px) {
+        height: 150px;
+    }
+    @media (max-width: 1150px) {
+        height: 148px;
+    }
+    @media (max-width: 1024px) {
+        height: 144px;
+        padding: 24px 42px;
+    }
+    @media (max-width: 768px) {
+        height: 138px;
+        padding: 24px 36px;
+    }
+    @media (max-width: 480px) {
+        height: 128px;
+        padding: 24px 30px;
+    }
+    @media (max-width: 378px) {
+        padding: 22px 28px;
+    }
+}
+
+.thumbnailStrip.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.thumbnailStrip.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    pointer-events: none;
+}
+
+.swiperWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiperWrapper :global(.swiper-slide) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.thumbnailWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+    user-select: none;
+    background: transparent;
+}
+
+.thumbnailWrapper:hover {
+    transform: translateY(-2px);
+}
+
+.thumbnailWrapper.active {
+    transform: scale(1.05);
+}
+
+.thumbnailWrapper.active:hover {
+    transform: scale(1.05) translateY(-2px);
+}
+
+.thumbnailWrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: var(--film-highlight);
+    border-radius: 2px;
+}
+
+.customNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(18, 18, 18, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(200, 200, 200, 0.6);
+    font-size: 28px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    outline: none;
+    line-height: 0;
+    padding: 0;
+
+    @media (max-width: 1920px) {
+        width: 38px;
+        height: 38px;
+    }
+    @media (max-width: 1800px) {
+        width: 36px;
+        height: 36px;
+    }
+    @media (max-width: 1600px) {
+        width: 34px;
+        height: 34px;
+    }
+    @media (max-width: 1440px) {
+        width: 32px;
+        height: 32px;
+    }
+    @media (max-width: 1024px) {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+    }
+    @media (max-width: 768px) {
+        width: 22px;
+        height: 22px;
+        font-size: 18px;
+    }
+}
+
+.customPrev {
+    padding: 0 0 4px 0;
+    left: 10px;
+
+    @media (max-width: 1024px) {
+        left: 6px;
+    }
+    @media (max-width: 768px) {
+        left: 4px;
+    }
+}
+
+.customNext {
+    padding: 0 0 4px 2px;
+    right: 10px;
+
+    @media (max-width: 1024px) {
+        right: 6px;
+    }
+    @media (max-width: 768px) {
+        right: 4px;
+    }
+}
+
+.customNav:hover {
+    background: rgba(18, 18, 18, 0.6);
+    color: rgba(220, 220, 220, 0.5);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.customNav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.swiperWrapper :global(.swiper-button-next),
+.swiperWrapper :global(.swiper-button-prev) {
+    display: none;
+}
+
+.thumbnailStrip.hidden .customNav {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnailStrip.visible .customNav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.handle {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 4px;
+    background: rgba(220, 220, 220, 0.7);
+    border-radius: 4px;
+    z-index: 100;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.handle:hover {
+    background: var(--accent-primary, #C4A45A);
+    width: 65px;
+}
+
+.handleHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.thumbnailStrip.withoutNavigation {
+    padding-left: 20px;
+    padding-right: 20px;
+}

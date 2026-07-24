@@ -1,0 +1,57 @@
+.perforationStrip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 6px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.perforationStrip.top {
+    top: 8px;
+
+    @media (max-width: 1920px) {
+        top: 9px;
+    }
+    @media (max-width: 1440px) {
+        top: 10px;
+    }
+    @media (max-width: 378px) {
+        top: 10px;
+    }
+}
+
+.perforationStrip.bottom {
+    bottom: 8px;
+}
+
+.perforation {
+    width: 18px;
+    height: 12px;
+    color: var(--film-perforation);
+    flex-shrink: 0;
+
+    @media (max-width: 1920px) {
+        width: 17px;
+        height: 11px;
+    }
+    @media (max-width: 1800px) {
+        width: 16px;
+        height: 10px;
+    }
+    @media (max-width: 1440px) {
+        width: 15px;
+        height: 9px;
+    }
+    @media (max-width: 1024px) {
+        width: 14px;
+        height: 8px;
+    }
+    @media (max-width: 378px) {
+        width: 13px;
+        height: 7px;
+    }
+}

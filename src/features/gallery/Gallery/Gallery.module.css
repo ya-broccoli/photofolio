@@ -1,0 +1,48 @@
+.gallery {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+.coverPhoto {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+}
+
+.mainPhoto {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-color: var(--film-highlight);
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+.fullscreenOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageSliderContainer {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+}
+
+.imageSliderContainer img {
+    object-fit: contain;
+}

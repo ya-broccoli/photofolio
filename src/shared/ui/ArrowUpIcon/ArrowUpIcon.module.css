@@ -1,0 +1,20 @@
+.icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    @media (max-width: 1440px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 18px;
+        height: 18px;
+    }
+
+    @media (max-width: 768px) {
+        width: 16px;
+        height: 16px;
+    }
+}
