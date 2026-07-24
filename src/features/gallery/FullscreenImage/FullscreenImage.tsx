@@ -108,8 +108,38 @@ export const FullscreenImage = ({
         setLoading(false)
     }
 
+    const touchStartX = useRef(0)
+    const touchEndX = useRef(0)
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        touchEndX.current = e.changedTouches[0].clientX
+
+        const delta = touchStartX.current - touchEndX.current
+
+        if (Math.abs(delta) < 50) return
+
+        if (delta > 0) {
+            onNextAction?.()
+        } else {
+            onPrevAction?.()
+        }
+
+        setUiVisible(true)
+        resetHideTimer()
+    }
+
     return createPortal(
-        <div className={s.overlay} onClick={handleBackdropClick} onMouseMove={handleMouseMove}>
+        <div
+            className={s.overlay}
+            onClick={handleBackdropClick}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+        >
             <Button
                 className={`${s.closeButton} ${!uiVisible ? s.hidden : ''}`}
                 onClick={onCloseAction}
