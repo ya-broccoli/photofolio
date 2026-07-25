@@ -186,7 +186,8 @@
 
 .closeButton.hidden,
 .navButton.hidden,
-.counter.hidden {
+.counter.hidden,
+.infoButton.hidden {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -194,7 +195,8 @@
 
 .closeButton:not(.hidden),
 .navButton:not(.hidden),
-.counter:not(.hidden) {
+.counter:not(.hidden),
+.infoButton:not(.hidden) {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.3s ease;
@@ -222,8 +224,8 @@
     transition: all 0.2s ease;
 
     @media (max-width: 768px) {
-        top: 12px;
-        left: 82px;
+        bottom: 26px;
+        right: 26px;
         width: 48px;
         height: 48px;
         font-size: 22px;

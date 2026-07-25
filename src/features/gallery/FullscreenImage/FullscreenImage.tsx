@@ -42,8 +42,21 @@ export const FullscreenImage = ({
         }
         hideTimeoutRef.current = setTimeout(() => {
             setUiVisible(false)
-        }, 2000)
+        }, 3000)
     }, [])
+
+    useEffect(() => {
+        if (showInfo) {
+            if (hideTimeoutRef.current) {
+                clearTimeout(hideTimeoutRef.current)
+            }
+
+            setUiVisible(true)
+        } else {
+            setUiVisible(true)
+            resetHideTimer()
+        }
+    }, [showInfo, resetHideTimer])
 
     useEffect(() => {
         setLoading(true)
@@ -155,7 +168,10 @@ export const FullscreenImage = ({
 
             {description && (
                 <>
-                    <button className={s.infoButton} onClick={() => setShowInfo((prev) => !prev)}>
+                    <button
+                        className={`${s.infoButton} ${!uiVisible && !showInfo ? s.hidden : ''}`}
+                        onClick={() => setShowInfo((prev) => !prev)}
+                    >
                         i
                     </button>
 
