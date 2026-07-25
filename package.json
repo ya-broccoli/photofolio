@@ -1,38 +1,38 @@
 {
-  "name": "photo-gallery",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1",
-    "axios": "^1.18.1",
-    "dotenv": "^17.4.2",
-    "form-data": "^4.0.6",
-    "next": "16.2.10",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-swipeable": "^7.0.2",
-    "sharp": "^0.35.3",
-    "swiper": "^11.2.10"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20.19.7",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "esbuild": "^0.25.8",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.10",
-    "prettier": "^3.9.5",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
-  }
+    "name": "photo-gallery",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
+    },
+    "dependencies": {
+        "@vercel/analytics": "^2.0.1",
+        "axios": "^1.18.1",
+        "dotenv": "^17.4.2",
+        "form-data": "^4.0.6",
+        "next": "16.2.10",
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7",
+        "react-swipeable": "^7.0.2",
+        "sharp": "^0.35.3",
+        "swiper": "^11.2.10"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "@types/node": "^20.19.7",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "esbuild": "^0.25.8",
+        "eslint": "^9",
+        "eslint-config-next": "16.2.10",
+        "prettier": "^3.9.5",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.20.3",
+        "typescript": "^5.8.3"
+    }
 }

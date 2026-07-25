@@ -11,7 +11,7 @@
 .imageContainer {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: #000000;
 }
 
@@ -29,8 +29,6 @@
     backdrop-filter: blur(4px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    width: 52px;
-    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,9 +43,7 @@
     @media (max-width: 768px) {
         top: 12px;
         right: 12px;
-        font-size: 36px;
-        width: 48px;
-        height: 48px;
+        font-size: 18px;
     }
 }
 
@@ -64,10 +60,8 @@
     border: 2px solid var(--border-color, rgba(255, 255, 255, 0.1));
     border-radius: 50%;
     color: var(--text-secondary, #B0B0B0);
-    font-size: 32px;
+    font-size: 36px;
     cursor: pointer;
-    width: 52px;
-    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,11 +69,15 @@
     line-height: 1;
     z-index: 10;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 
+    @media (max-width: 1280px) {
+        font-size: 34px;
+        padding-top: 2px;
+    }
     @media (max-width: 768px) {
         font-size: 32px;
-        width: 48px;
-        height: 48px;
     }
 }
 
@@ -88,10 +86,19 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+.navButton:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
 .prevButton {
     left: 30px;
     padding: 0 2px 6px 0;
 
+    @media (max-width: 1280px) {
+        padding: 0 2px 4px 2px;
+    }
     @media (max-width: 768px) {
         left: 8px;
     }
@@ -101,8 +108,38 @@
     right: 30px;
     padding: 0 0 6px 2px;
 
+    @media (max-width: 1280px) {
+        padding: 0 0 4px 2px;
+    }
     @media (max-width: 768px) {
         right: 8px;
+    }
+}
+
+.closeButton,
+.navButton {
+    width: 52px;
+    height: 52px;
+
+    @media (max-width: 1920px) {
+        width: 50px;
+        height: 50px;
+    }
+    @media (max-width: 1440px) {
+        width: 48px;
+        height: 48px;
+    }
+    @media (max-width: 1280px) {
+        width: 46px;
+        height: 46px;
+    }
+    @media (max-width: 1024px) {
+        width: 42px;
+        height: 42px;
+    }
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -226,8 +263,8 @@
     @media (max-width: 768px) {
         bottom: 26px;
         right: 26px;
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         font-size: 22px;
     }
 }
@@ -252,12 +289,23 @@
     line-height: 1.6;
     z-index: 10000;
 
+    @media (max-width: 1024px) {
+        max-width: 500px;
+        bottom: 80px;
+    }
     @media (max-width: 768px) {
-        top: 68px;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-        font-size: 14px;
+        bottom: 86px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: calc(100vw - 24px);
+        max-width: 420px;
+
+        max-height: calc(100dvh - 100px);
+
         padding: 16px;
+        font-size: 14px;
+
+        overflow-y: auto;
     }
 }

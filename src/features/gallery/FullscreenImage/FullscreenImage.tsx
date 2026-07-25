@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback, useRef } from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import s from './FullscreenImage.module.css'
 import { photoDescriptions } from '@/data/photoDescriptions'
