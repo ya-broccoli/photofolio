@@ -4,13 +4,14 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
+        "dev": "next dev --webpack",
+        "build": "next build --webpack",
         "start": "next start",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
     "dependencies": {
+        "@serwist/next": "^9.5.12",
         "@vercel/analytics": "^2.0.1",
         "axios": "^1.18.1",
         "dotenv": "^17.4.2",
@@ -19,6 +20,7 @@
         "react": "^19.2.7",
         "react-dom": "^19.2.7",
         "react-swipeable": "^7.0.2",
+        "serwist": "^9.5.12",
         "sharp": "^0.35.3",
         "swiper": "^11.2.10"
     },
