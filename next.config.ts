@@ -1,5 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+import withSerwistInit from '@serwist/next'
+
+const withSerwist = withSerwistInit({
+    swSrc: 'sw.ts',
+    swDest: 'public/sw.js',
+    disable: process.env.NODE_ENV === 'development',
+})
+
+const nextConfig: NextConfig = {
     images: {
         remotePatterns: [
             {
@@ -41,4 +49,4 @@ const nextConfig = {
     },
 }
 
-export default nextConfig
+export default withSerwist(nextConfig)

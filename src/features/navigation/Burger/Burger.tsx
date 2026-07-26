@@ -1,6 +1,7 @@
 'use client'
 
 import s from './Burger.module.css'
+import fixed from '../../../shared/styles/fixedControls.module.css'
 import { Button } from '@/shared/ui/Button/Button'
 import { forwardRef } from 'react'
 
@@ -13,7 +14,7 @@ export const Burger = forwardRef<HTMLButtonElement, Props>(({ isOpen, onToggleAc
     return (
         <Button
             ref={ref}
-            className={`${s.burger} ${isOpen ? s.open : ''}`}
+            className={`${s.burger} ${fixed.controlButton} ${isOpen ? s.open : ''}`}
             onClick={onToggleAction}
             aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
         >

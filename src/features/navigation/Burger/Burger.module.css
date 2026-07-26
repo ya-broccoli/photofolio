@@ -1,59 +1,27 @@
 .burger {
     position: fixed;
-    top: 40px;
     right: 48px;
-    width: 40px;
-    height: 40px;
-    z-index: 1002;
     background: transparent;
     border: none;
-    cursor: pointer;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1002;
 
-    @media (max-width: 1920px) {
-        width: 38px;
-        height: 38px;
-    }
-    @media (max-width: 1600px) {
-        width: 36px;
-        height: 36px;
-    }
     @media (max-width: 1440px) {
-        top: 26px;
         right: 44px;
-        width: 34px;
-        height: 34px;
-    }
-    @media (max-width: 1280px) {
-        width: 32px;
-        height: 32px;
     }
     @media (max-width: 1024px) {
-        top: 24px;
         right: 30px;
-        width: 30px;
-        height: 30px;
     }
     @media (max-width: 768px) {
-        top: 24px;
         right: 26px;
-        width: 28px;
-        height: 28px;
     }
     @media (max-width: 480px) {
-        top: 22px;
         right: 20px;
-        width: 26px;
-        height: 26px;
     }
     @media (max-width: 360px) {
-        top: 20px;
         right: 20px;
-        width: 24px;
-        height: 24px;
     }
 }
 
