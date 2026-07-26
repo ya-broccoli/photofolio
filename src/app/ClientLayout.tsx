@@ -3,12 +3,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavigationMenu } from '@/features/navigation/NavigationMenu/NavigationMenu'
 import { Burger } from '@/features/navigation/Burger/Burger'
-import { usePathname } from 'next/navigation'
-import { InstallButton } from '@/features/pwa/InstallButton/InstallButton'
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
-    const pathname = usePathname()
-
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const burgerRef = useRef<HTMLButtonElement | null>(null)
 
@@ -33,7 +29,6 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-            {pathname === '/' && <InstallButton />}
             <Burger
                 ref={burgerRef}
                 isOpen={isMenuOpen}

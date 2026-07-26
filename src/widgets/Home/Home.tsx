@@ -1,11 +1,13 @@
 'use client'
 
 import s from './Home.module.css'
+import { InstallButton } from '@/features/pwa/InstallButton/InstallButton'
 
 const Home = () => {
     return (
         <>
             <section className={s.cover}>
+                <InstallButton />
                 <div className={s.infoWrapper}>
                     <h1 className={s.title}>Владимир Верендеев</h1>
                     <p className={s.subtitle}>фотограф</p>
