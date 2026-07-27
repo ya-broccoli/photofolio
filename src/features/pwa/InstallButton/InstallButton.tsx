@@ -8,7 +8,7 @@ import s from './InstallButton.module.css'
 import fixed from '@/shared/styles/fixedControls.module.css'
 
 export const InstallButton = () => {
-    const { isInstallable, install, isIOS, isSafariMac } = usePWAInstall()
+    const { isInstallable, install, isIOS, isSafariMac, isInstalled } = usePWAInstall()
 
     const [showHint, setShowHint] = useState(false)
 
@@ -37,6 +37,10 @@ export const InstallButton = () => {
         }
 
         install()
+    }
+
+    if (isInstalled) {
+        return null
     }
 
     if (!isInstallable && !isIOS && !isSafariMac) {

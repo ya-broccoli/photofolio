@@ -15,6 +15,7 @@ export const usePWAInstall = () => {
     const [isInstallable, setIsInstallable] = useState(false)
     const [isIOS, setIsIOS] = useState(false)
     const [isSafariMac, setIsSafariMac] = useState(false)
+    const [isInstalled, setIsInstalled] = useState(false)
 
     useEffect(() => {
         console.log('userAgent:', window.navigator.userAgent)
@@ -22,6 +23,12 @@ export const usePWAInstall = () => {
 
         const userAgent = window.navigator.userAgent
         const isTouchDevice = 'ontouchend' in window
+
+        const standalone =
+            window.matchMedia('(display-mode: standalone)').matches ||
+            (window.navigator as Navigator & { standalone?: boolean }).standalone === true
+
+        setIsInstalled(standalone)
 
         setIsIOS(
             /iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && isTouchDevice),
@@ -57,6 +64,7 @@ export const usePWAInstall = () => {
 
         if (result.outcome === 'accepted') {
             setIsInstallable(false)
+            setIsInstalled(true)
         }
 
         setInstallPrompt(null)
@@ -67,5 +75,6 @@ export const usePWAInstall = () => {
         install,
         isIOS,
         isSafariMac,
+        isInstalled,
     }
 }
