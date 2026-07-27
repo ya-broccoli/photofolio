@@ -53,9 +53,11 @@ export const InstallButton = () => {
                 <div className={s.hint}>
                     {isIOS && (
                         <>
-                            <span className={s.hintTitle}>Установить приложение</span>
+                            <span className={s.hintTitle}>Установка приложения</span>
 
                             <span>
+                                Откройте сайт в браузере Safari
+                                <br />
                                 Нажмите «Поделиться»
                                 <br />→ «На экран “Домой”»
                             </span>
@@ -67,8 +69,9 @@ export const InstallButton = () => {
                             <span className={s.hintTitle}>Добавить приложение</span>
 
                             <span>
-                                Safari → Файл
-                                <br />→ Добавить в Dock
+                                В Safari откройте меню
+                                <br />
+                                Файл → «Добавить в Dock»
                             </span>
                         </>
                     )}
