@@ -1,11 +1,7 @@
-.installButton {
+.wrapper {
+    position: fixed;
+    top: 40px;
     left: 48px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 1000;
 
     @media (max-width: 1440px) {
@@ -25,20 +21,16 @@
     }
 }
 
-.installButton::after {
-    content: 'Установить приложение';
-    position: absolute;
-    top: 50px;
-    left: 42px;
-    opacity: 0;
-    color: var(--text-secondary);
-    pointer-events: none;
-    transition: opacity .3s;
+.installButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
-.installButton:hover::after {
-    opacity: 1;
-}
 
 .icon {
     width: 40px;
@@ -73,8 +65,57 @@
         height: 26px;
     }
     @media (max-width: 360px) {
-
         width: 24px;
         height: 24px;
+    }
+}
+
+.hint {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 260px;
+    padding: 18px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(14px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    color: var(--text-secondary, #B0B0B0);
+    font-size: 15px;
+    line-height: 1.6;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: hintFade 0.25s ease-out;
+}
+
+.hintTitle {
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.hint::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+}
+
+@keyframes hintFade {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

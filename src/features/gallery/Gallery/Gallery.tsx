@@ -11,6 +11,7 @@ import allPhotos from '../../../data/photos.json'
 import { useDeviceMode } from '@/shared/hooks/useDeviceMode'
 import { useThumbnailVisibility } from '@/shared/hooks/useThumbnailVisibility'
 import type { PhotoType } from '@/shared/types/photo'
+import { HomeButton } from '@/features/navigation/HomeButton/HomeButton'
 
 type Props = {
     category: string
@@ -105,6 +106,8 @@ export default function Gallery({ category }: Props) {
 
     return (
         <section className={s.gallery} onMouseMove={handleMouseMove}>
+            <HomeButton />
+
             {cover && (
                 <div className={s.coverPhoto}>
                     <Image

@@ -12,10 +12,28 @@ type BeforeInstallPromptEvent = Event & {
 
 export const usePWAInstall = () => {
     const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null)
-
     const [isInstallable, setIsInstallable] = useState(false)
+    const [isIOS, setIsIOS] = useState(false)
+    const [isSafariMac, setIsSafariMac] = useState(false)
 
     useEffect(() => {
+        console.log('userAgent:', window.navigator.userAgent)
+        console.log('maxTouchPoints:', navigator.maxTouchPoints)
+
+        const userAgent = window.navigator.userAgent
+        const isTouchDevice = 'ontouchend' in window
+
+        setIsIOS(
+            /iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && isTouchDevice),
+        )
+
+        setIsSafariMac(
+            /Macintosh/i.test(userAgent) &&
+                /Safari/i.test(userAgent) &&
+                !/Chrome|CriOS|Firefox|FxiOS|EdgiOS/i.test(userAgent) &&
+                !isTouchDevice,
+        )
+
         const handleBeforeInstallPrompt = (event: Event) => {
             event.preventDefault()
 
@@ -47,5 +65,7 @@ export const usePWAInstall = () => {
     return {
         isInstallable,
         install,
+        isIOS,
+        isSafariMac,
     }
 }
